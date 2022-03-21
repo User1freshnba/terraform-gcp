@@ -1,18 +1,18 @@
 variable "ProjectID" {
-    type = string
+  type = string
 }
 
 variable "DefaultRegion" {
-    type = string
+  type = string
 }
 variable "DefaultZone" {
-    type = string
+  type = string
 }
 
 variable "environment" {
-    type = string
+  type = string
 }
 
-variable  "target_size" {
-    type = number
+variable "target_size" {
+  type = number
 }

@@ -1,6 +1,6 @@
 resource "google_compute_instance_template" "default" {
- 
-  name  = "instance-template-${var.target_size}"
+
+  name        = "instance-template-${var.target_size}"
   description = "This template is used to create app server instances."
 
   tags = ["foo", "bar"]
@@ -18,13 +18,13 @@ resource "google_compute_instance_template" "default" {
     on_host_maintenance = "MIGRATE"
   }
 
- 
 
-   // Create a new boot disk from an image
+
+  // Create a new boot disk from an image
   disk {
-    source_image      = "debian-cloud/debian-9"
-    auto_delete       = true
-    boot              = true
+    source_image = "debian-cloud/debian-9"
+    auto_delete  = true
+    boot         = true
     // backup the disk every day
     resource_policies = [google_compute_resource_policy.daily_backup.id]
   }
@@ -35,10 +35,10 @@ resource "google_compute_instance_template" "default" {
   }
 
   metadata = {
-    foo = "bar"
-    startup-script = "sudo apt-get update && sudo apt-get install -y nginx" 
+    foo            = "bar"
+    startup-script = "sudo apt-get update && sudo apt-get install -y nginx"
   }
-  
+
 
 
   service_account {
@@ -50,7 +50,7 @@ resource "google_compute_instance_template" "default" {
   lifecycle {
     create_before_destroy = true
   }
-  
+
 }
 
 resource "google_compute_resource_policy" "daily_backup" {
@@ -84,11 +84,11 @@ resource "google_compute_instance_group_manager" "appserver" {
 
   base_instance_name = google_compute_instance_template.default.name
   zone               = "us-central1-a"
-  target_size = var.target_size
+  target_size        = var.target_size
 
 
   version {
-    instance_template  = google_compute_instance_template.default.id
+    instance_template = google_compute_instance_template.default.id
   }
 
 
