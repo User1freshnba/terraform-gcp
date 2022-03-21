@@ -102,5 +102,5 @@ resource "google_compute_instance_group_manager" "appserver" {
     health_check      = google_compute_health_check.autohealing.id
     initial_delay_sec = 300
   }
-  depends_on = ["google_compute_instance_template.default"]
+  depends_on = [google_compute_instance_template.default]
 }
