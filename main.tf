@@ -2,7 +2,7 @@ provider "google" {
   project = var.ProjectID
   region  = var.DefaultRegion
   zone    = var.DefaultZone
-  credentials = "../dev-project-344105-80dace42be04.json"
+ #credentials = "../dev-project-344105-80dace42be04.json"
 }
 
 
@@ -10,7 +10,7 @@ provider "google-beta" {
   project = var.ProjectID
   region  = var.DefaultRegion
   zone    = var.DefaultZone
-  credentials = "../dev-project-344105-80dace42be04.json"
+ # credentials = "../dev-project-344105-80dace42be04.json"
 }
 
 
