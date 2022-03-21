@@ -6,12 +6,12 @@ provider "google" {
 }
 
 
-provider "google-beta" {
-  project = var.ProjectID
-  region  = var.DefaultRegion
-  zone    = var.DefaultZone
-  #credentials = "../dev-project-344105-80dace42be04.json"
-}
+# provider "google-beta" {
+#   project = var.ProjectID
+#   region  = var.DefaultRegion
+#   zone    = var.DefaultZone
+#   #credentials = "../dev-project-344105-80dace42be04.json"
+# }
 
 
 
@@ -104,7 +104,7 @@ provider "google-beta" {
 # }
 
 resource "google_compute_network" "vpc_network" {
-  project                 = "my-project-name"
+  project                 = var.ProjectID
   name                    = "vpc-network"
   auto_create_subnetworks = true
   mtu                     = 1460
