@@ -1,7 +1,6 @@
 # terraform
-Creating CI-Cd Pipeline. 
-Adding another commit
-removed 4th line
-7th Commit
+Creating CI-Cd Pipeline for creating infrastructure through terraform. 
+This repo is owned by tasleem khan
+
 
 
